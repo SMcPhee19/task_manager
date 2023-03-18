@@ -1,0 +1,15 @@
+<%= @tasks %>
+
+<h1>All Tasks</h1>
+
+<% @tasks.each do |task| %>
+  <h3><%= task %></h3>
+<% end %>
+
+<form action="/tasks" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter an new task</p>
+  <input type='text' name='task[title]'/><br/>
+  <textarea name='task[description]'></textarea><br/>
+  <input type='submit'/>
+</form>
